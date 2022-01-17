@@ -18,77 +18,39 @@
           "total": 0
         },
         "passions": "",
-        "duties": "",
-        "stats": {
-          "BOD": {
-            "d": 1,
-            "ed": 0,
-            "md": 0
-          },
-          "COO": {
-            "d": 1,
-            "ed": 0,
-            "md": 0
-          },
-          "CHA": {
-            "d": 1,
-            "ed": 0,
-            "md": 0
-          },
-          "COM": {
-            "d": 1,
-            "ed": 0,
-            "md": 0
-          },
-          "SEN": {
-            "d": 1,
-            "ed": 0,
-            "md": 0
-          },
-          "KNO": {
-            "d": 1,
-            "ed": 0,
-            "md": 0
-          }
-        },
-        "skills": {
-          "ATH": 0,
-          "END": 0,
-          "FIG": 0,
-          "PAR": 0,
-          "RUN": 0,
-          "VIG": 0,
-
-          "CLI": 0,
-          "DOD": 0,
-          "PER_COO": 0,
-          "RID": 0,
-          "STE": 0,
-          "WEA": 0
-        }
+        "duties": ""
       }
     },
     "npc": {
       "templates": ["base"],
-      "threat": 1
+      "threat": 1,
+      "number": 0
     }
   },
   "Item": {
-    "types": ["item", "feature"],
+    "types": ["stat", "skill", "power"],
     "templates": {
       "base": {
         "description": ""
+      },
+      "rollable": {
+        "templates": ["base"],
+        "d": 0,
+        "ed": 0,
+        "ed_set": 10,
+        "md": 0
       }
     },
-    "item": {
-      "templates": ["base"],
-      "d": 0,
-      "ed": 0,
-      "ed_set": 10,
-      "md": 0
+    "stat": {
+      "templates": ["rollable"]
     },
-    "feature": {
-      "templates": ["base"]
+    "skill": {
+      "templates": ["rollable"],
+      "stat": ""
+    },
+    "power": {
+      "templates": ["rollable"],
+      "cost": 1
     }
   }
 }

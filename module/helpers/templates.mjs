@@ -7,7 +7,8 @@
   return loadTemplates([
 
     // Actor partials.
-    "systems/mycustomsystem/templates/actor/parts/actor-features.html",
-    "systems/mycustomsystem/templates/actor/parts/actor-items.html",
+    "systems/mycustomsystem/templates/actor/parts/actor-stats.html",
+    "systems/mycustomsystem/templates/actor/parts/actor-skills.html",
+    "systems/mycustomsystem/templates/actor/parts/actor-powers.html",
   ]);
 };

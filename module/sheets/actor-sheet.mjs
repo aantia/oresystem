@@ -13,7 +13,7 @@ export class ReignActorSheet extends ActorSheet {
       template: "systems/mycustomsystem/templates/actor/actor-sheet.html",
       width: 600,
       height: 600,
-      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "features" }]
+      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }]
     });
   }
 
@@ -75,25 +75,27 @@ export class ReignActorSheet extends ActorSheet {
    */
   _prepareItems(context) {
     // Initialize containers.
-    const gear = [];
-    const features = [];
+    const stats = [];
+    const skills = [];
+    const powers = [];
 
     // Iterate through items, allocating to containers
     for (let i of context.items) {
       i.img = i.img || DEFAULT_TOKEN;
-      // Append to gear.
-      if (i.type === 'item') {
-        gear.push(i);
-      }
-      // Append to features.
-      else if (i.type === 'feature') {
-        features.push(i);
+      // Append to appropriate arrays.
+      if (i.type === 'stat') {
+        stats.push(i);
+      } else if (i.type === 'skill') {
+        skills.push(i);
+      } else if (i.type === 'power') {
+        powers.push(i);
       }
     }
 
     // Assign and return
-    context.gear = gear;
-    context.features = features;
+    context.stats = stats;
+    context.skills = skills;
+    context.powers = powers;
    }
 
   /* -------------------------------------------- */
