@@ -29,7 +29,7 @@ Hooks.once('init', async function() {
    * @type {String}
    */
   CONFIG.Combat.initiative = {
-    formula: "100/actor.data.data.attributes.SEN",
+    formula: "100/(actor.items.getName(\"Sense\").data.data.d + 2 * actor.items.getName(\"Sense\").data.data.ed + 4 * actor.items.getName(\"Sense\").data.data.md)",
     decimals: 0
   };
 
@@ -65,6 +65,16 @@ Handlebars.registerHelper('concat', function() {
 Handlebars.registerHelper('toLowerCase', function(str) {
   return str.toLowerCase();
 });
+
+Handlebars.registerHelper('numLoop', function (num, options) {
+  let ret = ''
+
+  for (let i = 0, j = num; i < j; i++) {
+    ret = ret + options.fn(i)
+  }
+
+  return ret
+})
 
 /* -------------------------------------------- */
 /*  Ready Hook                                  */

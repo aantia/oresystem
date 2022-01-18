@@ -434,6 +434,50 @@
   padding-left: 5px;
   text-align: left;
 }
+
+.mycustomsystem .resource-counter .resource-counter-step[data-state="-"] {
+  background-color: #790813;
+}
+
+.mycustomsystem .resource-counter .resource-counter-step[data-state="/"] {
+  background:
+    linear-gradient(
+      135deg,
+      transparent 0%,
+      transparent 43%,
+      black 45%,
+      black 55%,
+      transparent 57%,
+      transparent 100%
+    );
+}
+
+.mycustomsystem .resource-counter .resource-counter-step[data-state="x"] {
+  background:
+    linear-gradient(
+      45deg,
+      transparent 0%,
+      transparent 43%,
+      black 45%,
+      black 55%,
+      transparent 57%,
+      transparent 100%
+    ),
+    linear-gradient(
+      135deg,
+      transparent 0%,
+      transparent 43%,
+      black 45%,
+      black 55%,
+      transparent 57%,
+      transparent 100%
+    );
+}
+
+.mycustomsystem .flex-group-center:not(.flexrow) .resource-value,
+.mycustomsystem .flex-group-center:not(.flexrow) .resource-counter {
+  margin-top: 5px;
+}
 /*
 .mycustomsystem .item-formula {
   -webkit-box-flex: 0;

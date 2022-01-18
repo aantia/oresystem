@@ -96,7 +96,7 @@ export class ReignActorSheet extends ActorSheet {
     context.stats = stats;
     context.skills = skills;
     context.powers = powers;
-   }
+  }
 
   /* -------------------------------------------- */
 
@@ -164,7 +164,7 @@ export class ReignActorSheet extends ActorSheet {
     delete itemData.data["type"];
 
     // Finally, create the item!
-    return await Item.create(itemData, {parent: this.actor});
+    return await Item.create(itemData, { parent: this.actor });
   }
 
   /**

@@ -18,7 +18,39 @@
           "total": 0
         },
         "passions": "",
-        "duties": ""
+        "duties": "",
+        "hitLocs": {
+          "head": {
+            "shock": 0,
+            "killing": 0,
+            "max": 4
+          },
+          "torso": {
+            "shock": 0,
+            "killing": 0,
+            "max": 10
+          },
+          "arm_r": {
+            "shock": 0,
+            "killing": 0,
+            "max": 5
+          },
+          "arm_l": {
+            "shock": 0,
+            "killing": 0,
+            "max": 5
+          },
+          "leg_r": {
+            "shock": 0,
+            "killing": 0,
+            "max": 5
+          },
+          "leg_l": {
+            "shock": 0,
+            "killing": 0,
+            "max": 5
+          }
+        }
       }
     },
     "npc": {

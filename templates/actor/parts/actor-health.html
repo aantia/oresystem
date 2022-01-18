@@ -1,0 +1,12 @@
+<div class="resource flex-group-center">
+    <label for="data.attributes.hitlocs.head" class="resource-label">Head</label>
+    {{log this.data.attributes.hitLocs.head}}
+    <div class="resource-content flexrow flex-center flex-between">
+        <div class="resource-counter" data-states="/:shock,x:killing" data-max="{{this.data.attributes.hitLocs.head.max}}" data-superficial="{{this.data.attributes.hitLocs.head.shock}}" data-aggravated="{{this.data.attributes.hitLocs.head.killing}}" data-name="data.health.head">
+            {{#numLoop this.data.attributes.hitLocs.head.max}}
+            {{log this}}
+            <span class="resource-counter-step" data-index="{{this}}" data-state=""></span>
+            {{/numLoop}}
+        </div>
+    </div>
+</div>

@@ -40,6 +40,29 @@ export class ReignItemSheet extends ItemSheet {
     let actor = this.object?.parent ?? null;
     if (actor) {
       context.rollData = actor.getRollData();
+
+      // We need to be able to choose from the other stats.
+      // Initialize containers.
+      const stats = [];
+      const skills = [];
+      const powers = [];
+
+      // Iterate through items, allocating to containers
+      for (let i of actor.items) {
+        // Append to appropriate arrays.
+        if (i.type === 'stat') {
+          stats.push(i);
+        } else if (i.type === 'skill') {
+          skills.push(i);
+        } else if (i.type === 'power') {
+          powers.push(i);
+        }
+      }
+
+      // Assign and return
+      context.stats = stats;
+      context.skills = skills;
+      context.powers = powers;
     }
 
     // Add the actor's data to context.data for easier access, as well as flags.
@@ -49,15 +72,15 @@ export class ReignItemSheet extends ItemSheet {
     return context;
   }
 
-  /* -------------------------------------------- */
+/* -------------------------------------------- */
 
-  /** @override */
-  activateListeners(html) {
-    super.activateListeners(html);
+/** @override */
+activateListeners(html) {
+  super.activateListeners(html);
 
-    // Everything below here is only needed if the sheet is editable
-    if (!this.isEditable) return;
+  // Everything below here is only needed if the sheet is editable
+  if (!this.isEditable) return;
 
-    // Roll handlers, click handlers, etc. would go here.
-  }
+  // Roll handlers, click handlers, etc. would go here.
+}
 }

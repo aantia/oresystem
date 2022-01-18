@@ -3,6 +3,19 @@
   {{!-- Sheet Header --}}
   <header class="sheet-header">
     <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="300" width="300" />
+
+
+    <div class="resource-panel health" data-resource="health">
+      <div class="boxes">
+        {{log data.attributes.hitLocs}}
+        {{#each data.attributes.hitLocs as |rez index|}}
+        {{log ../editable}}
+        <div class="box" title="Head HP" data-clickable="{{../editable}}" data-index="{{index}}"
+          data-state="{{rez.state}}"></div>
+        {{/each}}
+      </div>
+    </div>
+
     <div class="header-fields">
       <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name" /></h1>
       {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
@@ -16,18 +29,22 @@
         <div class="resource flex-group-center">
           <label for="data.attributes.willpower.value" class="resource-label">Willpower</label>
           <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="data.attributes.willpower.value" value="{{data.attributes.willpower.value}}" data-dtype="Number" />
+            <input type="text" name="data.attributes.willpower.value" value="{{data.attributes.willpower.value}}"
+              data-dtype="Number" />
             <span> / </span>
-            <input type="text" name="data.attributes.willpower.max" value="{{data.attributes.willpower.max}}" data-dtype="Number" />
+            <input type="text" name="data.attributes.willpower.max" value="{{data.attributes.willpower.max}}"
+              data-dtype="Number" />
           </div>
         </div>
 
         <div class="resource flex-group-center">
           <label for="data.attributes.xp.unspent" class="resource-label">Experience</label>
           <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="data.attributes.xp.unspent" value="{{data.attributes.xp.unspent}}" data-dtype="Number" />
+            <input type="text" name="data.attributes.xp.unspent" value="{{data.attributes.xp.unspent}}"
+              data-dtype="Number" />
             <span> / </span>
-            <input type="text" name="data.attributes.xp.total" value="{{data.attributes.xp.total}}" data-dtype="Number" />
+            <input type="text" name="data.attributes.xp.total" value="{{data.attributes.xp.total}}"
+              data-dtype="Number" />
           </div>
         </div>
 

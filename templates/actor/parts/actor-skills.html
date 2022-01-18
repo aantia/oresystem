@@ -6,7 +6,6 @@
     <div class="item-md">Master Dice</div>
     <div class="item-ed_set">set ED</div>
     <div class="item-stat">Stat</div>
-    <div class="item-total">Total</div>
     <div class="item-controls">
       <a class="item-control item-create" title="Create item" data-type="skill"><i class="fas fa-plus"></i> Add item</a>
     </div>
@@ -24,17 +23,7 @@
     <div class="item-ed item-prop">{{item.data.ed}}</div>
     <div class="item-md item-prop">{{item.data.md}}</div>
     <div class="item-ed_set item-prop">{{item.data.ed_set}}</div>
-    {{log actor}}
-    \{{escaped}}
-    {{{{raw}}}}
-    {{escaped}}
-    {{{{/raw}}}}
-    <select id="stat" name="stat">
-      {{#each stats as |_stat id|}}
-      <option>{{_stat.name}}</option>
-      {{/each}}
-    </select>
-    <div class="item-total item-prop">{{item.data.d}}d {{item.data.ed}}E {{item.data.md}}M</div>
+    <div class="item-stat item-prop">{{item.data.stat}}</div>
     <div class="item-controls">
       <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
       <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
