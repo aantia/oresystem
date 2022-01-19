@@ -1,7 +1,7 @@
 {
-  "name": "mycustomsystem",
-  "version": "1.0.0",
-  "description": "CSS compiler for the Reign_WT Hybrid system",
+  "name": "oresystem",
+  "version": "0.1.0",
+  "description": "CSS compiler for the ORE system",
   "scripts": {
     "build": "gulp build",
     "compile": "gulp css",

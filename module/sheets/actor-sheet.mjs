@@ -9,8 +9,8 @@ export class ReignActorSheet extends ActorSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["mycustomsystem", "sheet", "actor"],
-      template: "systems/mycustomsystem/templates/actor/actor-sheet.html",
+      classes: ["oresystem", "sheet", "actor"],
+      template: "systems/oresystem/templates/actor/actor-sheet.html",
       width: 600,
       height: 600,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }]
@@ -19,7 +19,7 @@ export class ReignActorSheet extends ActorSheet {
 
   /** @override */
   get template() {
-    return `systems/mycustomsystem/templates/actor/actor-${this.actor.data.type}-sheet.html`;
+    return `systems/oresystem/templates/actor/actor-${this.actor.data.type}-sheet.html`;
   }
 
   /* -------------------------------------------- */

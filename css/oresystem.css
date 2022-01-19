@@ -223,12 +223,12 @@
   text-align: center;
 }
 
-/* Styles limited to mycustomsystem sheets */
-.mycustomsystem .item-form {
+/* Styles limited to oresystem sheets */
+.oresystem .item-form {
   font-family: 'Times New Roman', Times, serif;
 }
 
-.mycustomsystem .sheet-header {
+.oresystem .sheet-header {
   -webkit-box-flex: 0;
   -ms-flex: 0 auto;
   flex: 0 auto;
@@ -248,7 +248,7 @@
   margin-bottom: 10px;
 }
 
-.mycustomsystem .sheet-header .profile-img {
+.oresystem .sheet-header .profile-img {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 100px;
   flex: 0 0 100px;
@@ -256,50 +256,50 @@
   margin-right: 10px;
 }
 
-.mycustomsystem .sheet-header .header-fields {
+.oresystem .sheet-header .header-fields {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.mycustomsystem .sheet-header h1.charname {
+.oresystem .sheet-header h1.charname {
   height: 50px;
   padding: 0px;
   margin: 5px 0;
   border-bottom: 0;
 }
 
-.mycustomsystem .sheet-header h1.charname input {
+.oresystem .sheet-header h1.charname input {
   width: 100%;
   height: 100%;
   margin: 0;
 }
 
-.mycustomsystem .sheet-tabs {
+.oresystem .sheet-tabs {
   -webkit-box-flex: 0;
   -ms-flex: 0;
   flex: 0;
 }
 
-.mycustomsystem .sheet-body,
-.mycustomsystem .sheet-body .tab,
-.mycustomsystem .sheet-body .tab .editor {
+.oresystem .sheet-body,
+.oresystem .sheet-body .tab,
+.oresystem .sheet-body .tab .editor {
   height: 100%;
 }
 
-.mycustomsystem .tox .tox-editor-container {
+.oresystem .tox .tox-editor-container {
   background: #fff;
 }
 
-.mycustomsystem .tox .tox-edit-area {
+.oresystem .tox .tox-edit-area {
   padding: 0 8px;
 }
 
-.mycustomsystem .resource-label {
+.oresystem .resource-label {
   font-weight: bold;
 }
 
-.mycustomsystem .items-header {
+.oresystem .items-header {
   height: 28px;
   margin: 2px 0;
   padding: 0;
@@ -311,12 +311,12 @@
   font-weight: bold;
 }
 
-.mycustomsystem .items-header > * {
+.oresystem .items-header > * {
   font-size: 14px;
   text-align: center;
 }
 
-.mycustomsystem .items-header .item-name {
+.oresystem .items-header .item-name {
   font-weight: bold;
   padding-left: 5px;
   text-align: left;
@@ -325,7 +325,7 @@
   display: flex;
 }
 
-.mycustomsystem .items-list {
+.oresystem .items-list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -334,13 +334,13 @@
   color: #444;
 }
 
-.mycustomsystem .items-list .item-list {
+.oresystem .items-list .item-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.mycustomsystem .items-list .item-name {
+.oresystem .items-list .item-name {
   -webkit-box-flex: 2;
   -ms-flex: 2;
   flex: 2;
@@ -356,13 +356,13 @@
   display: flex;
 }
 
-.mycustomsystem .items-list .item-name h3, .mycustomsystem .items-list .item-name h4 {
+.oresystem .items-list .item-name h3, .oresystem .items-list .item-name h4 {
   margin: 0;
   white-space: nowrap;
   overflow-x: hidden;
 }
 
-.mycustomsystem .items-list .item-controls {
+.oresystem .items-list .item-controls {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -374,13 +374,13 @@
   justify-content: flex-end;
 }
 
-.mycustomsystem .items-list .item-controls a {
+.oresystem .items-list .item-controls a {
   font-size: 12px;
   text-align: center;
   margin: 0 6px;
 }
 
-.mycustomsystem .items-list .item {
+.oresystem .items-list .item {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -388,15 +388,15 @@
   border-bottom: 1px solid #c9c7b8;
 }
 
-.mycustomsystem .items-list .item:last-child {
+.oresystem .items-list .item:last-child {
   border-bottom: none;
 }
 
-.mycustomsystem .items-list .item .item-name {
+.oresystem .items-list .item .item-name {
   color: #191813;
 }
 
-.mycustomsystem .items-list .item .item-name .item-image {
+.oresystem .items-list .item .item-name .item-image {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 30px;
   flex: 0 0 30px;
@@ -406,14 +406,14 @@
   margin-right: 5px;
 }
 
-.mycustomsystem .items-list .item-prop {
+.oresystem .items-list .item-prop {
   text-align: center;
   border-left: 1px solid #c9c7b8;
   border-right: 1px solid #c9c7b8;
   font-size: 12px;
 }
 
-.mycustomsystem .items-list .items-header {
+.oresystem .items-list .items-header {
   height: 28px;
   margin: 2px 0;
   padding: 0;
@@ -425,21 +425,21 @@
   font-weight: bold;
 }
 
-.mycustomsystem .items-list .items-header > * {
+.oresystem .items-list .items-header > * {
   font-size: 12px;
   text-align: center;
 }
 
-.mycustomsystem .items-list .items-header .item-name {
+.oresystem .items-list .items-header .item-name {
   padding-left: 5px;
   text-align: left;
 }
 
-.mycustomsystem .resource-counter .resource-counter-step[data-state="-"] {
+.oresystem .resource-counter .resource-counter-step[data-state="-"] {
   background-color: #790813;
 }
 
-.mycustomsystem .resource-counter .resource-counter-step[data-state="/"] {
+.oresystem .resource-counter .resource-counter-step[data-state="/"] {
   background:
     linear-gradient(
       135deg,
@@ -452,7 +452,7 @@
     );
 }
 
-.mycustomsystem .resource-counter .resource-counter-step[data-state="x"] {
+.oresystem .resource-counter .resource-counter-step[data-state="x"] {
   background:
     linear-gradient(
       45deg,
@@ -474,12 +474,12 @@
     );
 }
 
-.mycustomsystem .flex-group-center:not(.flexrow) .resource-value,
-.mycustomsystem .flex-group-center:not(.flexrow) .resource-counter {
+.oresystem .flex-group-center:not(.flexrow) .resource-value,
+.oresystem .flex-group-center:not(.flexrow) .resource-counter {
   margin-top: 5px;
 }
 /*
-.mycustomsystem .item-formula {
+.oresystem .item-formula {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 200px;
   flex: 0 0 200px;

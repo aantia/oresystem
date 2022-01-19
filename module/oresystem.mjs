@@ -6,7 +6,7 @@ import { ReignActorSheet } from "./sheets/actor-sheet.mjs";
 import { ReignItemSheet } from "./sheets/item-sheet.mjs";
 // Import helper/utility classes and constants.
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
-import { MYCUSTOMSYSTEM } from "./helpers/config.mjs";
+import { ORESYSTEM } from "./helpers/config.mjs";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -16,13 +16,13 @@ Hooks.once('init', async function() {
 
   // Add utility classes to the global game object so that they're more easily
   // accessible in global contexts.
-  game.mycustomsystem = {
+  game.oresystem = {
     ReignActor,
     ReignItem
   };
 
   // Add custom constants for configuration.
-  CONFIG.MYCUSTOMSYSTEM = MYCUSTOMSYSTEM;
+  CONFIG.ORESYSTEM = ORESYSTEM;
 
   /**
    * Set an initiative formula for the system
@@ -39,9 +39,9 @@ Hooks.once('init', async function() {
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("mycustomsystem", ReignActorSheet, { makeDefault: true });
+  Actors.registerSheet("oresystem", ReignActorSheet, { makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("mycustomsystem", ReignItemSheet, { makeDefault: true });
+  Items.registerSheet("oresystem", ReignItemSheet, { makeDefault: true });
 
   // Preload Handlebars templates.
   return preloadHandlebarsTemplates();

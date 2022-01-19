@@ -7,7 +7,7 @@ export class ReignItemSheet extends ItemSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["mycustomsystem", "sheet", "item"],
+      classes: ["oresystem", "sheet", "item"],
       width: 520,
       height: 480,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }]
@@ -16,7 +16,7 @@ export class ReignItemSheet extends ItemSheet {
 
   /** @override */
   get template() {
-    const path = "systems/mycustomsystem/templates/item";
+    const path = "systems/oresystem/templates/item";
     // Return a single sheet for all item types.
     //return `${path}/item-sheet.html`;
 

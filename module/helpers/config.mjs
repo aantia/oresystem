@@ -1,7 +1,7 @@
-export const MYCUSTOMSYSTEM = {};
+export const ORESYSTEM = {};
 
 // Define constants here, such as:
-MYCUSTOMSYSTEM.foobar = {
-  'bas': 'MYCUSTOMSYSTEM.bas',
-  'bar': 'MYCUSTOMSYSTEM.bar'
+ORESYSTEM.foobar = {
+  'bas': 'ORESYSTEM.bas',
+  'bar': 'ORESYSTEM.bar'
 };

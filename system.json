@@ -1,16 +1,16 @@
 {
-  "name": "mycustomsystem",
-  "title": "Reign_WT Hybrid",
-  "description": "The Reign_WT Hybrid system for FoundryVTT!",
-  "version": "1.0.0",
+  "name": "oresystem",
+  "title": "ORE system",
+  "description": "A system for playing ORE games in FoundryVTT",
+  "version": "0.1.0",
   "minimumCoreVersion": "9",
   "compatibleCoreVersion": "9",
   "author": "aantia",
   "esmodules": [
-    "module/mycustomsystem.mjs",
+    "module/oresystem.mjs",
     "scripts/one_roll_engine.js"
   ],
-  "styles": ["css/mycustomsystem.css"],
+  "styles": ["css/oresystem.css"],
   "scripts": [],
   "packs": [],
   "languages": [

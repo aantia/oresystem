@@ -31,7 +31,7 @@ export class ReignActor extends Actor {
   prepareDerivedData() {
     const actorData = this.data;
     const data = actorData.data;
-    const flags = actorData.flags.mycustomsystem || {};
+    const flags = actorData.flags.oresystem || {};
 
     // Make separate methods for each Actor type (character, npc, etc.) to keep
     // things organized.
