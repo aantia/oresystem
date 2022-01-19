@@ -1,4 +1,4 @@
-A sheet for playing ORE games. I run a hybrid of Reign and Wild Talents, so if anything is weird blame that. If anything is ugly or just bad UX, blame my general incompetence in the sphere of web development.
+A very basic system for playing ORE games. I run a hybrid of Reign and Wild Talents, so if anything is weird blame that. If anything is ugly or just bad UX, blame my general incompetence in the sphere of web development.
 
 TODO: Make system settings to switch elements on and off (e.g. Powers tab) and rename elements (e.g. Passions).
       Prettify the sheet; this default css is horribly ugly.
@@ -6,6 +6,7 @@ TODO: Make system settings to switch elements on and off (e.g. Powers tab) and r
 
 Credits:
 itamarcu, for the dice roller https://github.com/itamarcu/one-roll-engine
+The team behind the Vampire 5th edition sheet for the health boxes https://github.com/Rayji96/foundry-V5
 Matt Smith @Asacolips for the Boilerplate template https://gitlab.com/asacolips-projects/foundry-mods/boilerplate
 aantia for the rest of the system
 Greg Stolze for the ORE itself.
