@@ -1,7 +1,9 @@
 MIT License
 
-Copyright (c) 2021 aantia
+Copyright (c) 2022 aantia
 Copyright (c) 2020 Asacolips Projects / Foundry Mods
+
+For an up-to-date list of other contributors, please see https://github.com/aantia/oresystem .
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
