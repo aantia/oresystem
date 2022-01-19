@@ -10,9 +10,24 @@
     "module/oresystem.mjs",
     "scripts/one_roll_engine.js"
   ],
-  "styles": ["css/oresystem.css"],
+  "styles": [
+    "css/oresystem.css"
+  ],
   "scripts": [],
-  "packs": [],
+  "packs": [
+    {
+      "name": "stats",
+      "label": "Stats",
+      "path": "/packs/stats.db",
+      "entity": "Item"
+    },
+    {
+      "name": "skills",
+      "label": "Skills",
+      "path": "/packs/skills.db",
+      "entity": "Item"
+    }
+  ],
   "languages": [
     {
       "lang": "en",
