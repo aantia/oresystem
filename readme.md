@@ -1,4 +1,4 @@
-A sheet for playing ORE games. I run a hybrid of Reign and Wild Talents, so if anything is weird blame that.
+A sheet for playing ORE games. I run a hybrid of Reign and Wild Talents, so if anything is weird blame that. If anything is ugly or just bad UX, blame my general incompetence in the sphere of web development.
 
 TODO: Make system settings to switch elements on and off (e.g. Powers tab) and rename elements (e.g. Passions).
       Prettify the sheet; this default css is horribly ugly.
