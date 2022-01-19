@@ -79,8 +79,8 @@ export class ReignActor extends Actor {
     if (this.data.type !== 'character') return;
 
     // Add level for easier access, or fall back to 0.
-    /*if (data.attributes.level) {
-      data.lvl = data.attributes.level.value ?? 0;
+    /*if (data.level) {
+      data.lvl = data.level.value ?? 0;
     }*/
   }
 

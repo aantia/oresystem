@@ -1,12 +1,18 @@
-<div class="resource flex-group-center">
-    <label for="data.attributes.hitlocs.head" class="resource-label">Head</label>
-    {{log this.data.attributes.hitLocs.head}}
-    <div class="resource-content flexrow flex-center flex-between">
-        <div class="resource-counter" data-states="/:shock,x:killing" data-max="{{this.data.attributes.hitLocs.head.max}}" data-superficial="{{this.data.attributes.hitLocs.head.shock}}" data-aggravated="{{this.data.attributes.hitLocs.head.killing}}" data-name="data.health.head">
-            {{#numLoop this.data.attributes.hitLocs.head.max}}
-            {{log this}}
-            <span class="resource-counter-step" data-index="{{this}}" data-state=""></span>
-            {{/numLoop}}
+<div class="resource grid grid-2col align-center ">
+    {{#each this.data.hitLocs as |location index|}}
+    <div>
+        <i class="fas fa-minus resource-control resource-minus" data-resource={{index}} data-action="minus"></i>
+        <label for="location.no" class="label">{{location.no}}</label>
+        <i class="fas fa-plus resource-control resource-plus" data-resource={{index}} data-action="plus"></i>
+        <div><label for="location.name" class="resource-label">{{location.name}}</label></div>
+        <div class="resource-content flexrow flex-center flex-between">
+            <div class="resource-counter" data-states="/:shock,x:killing" data-max="{{location.max}}"
+                data-shock="{{location.shock}}" data-killing="{{location.killing}}" data-name="data.hitLocs.{{index}}">
+                {{#numLoop location.max}}
+                <span class="resource-counter-step" data-index="{{this}}" data-state="">☐</span>
+                {{/numLoop}}
+            </div>
         </div>
     </div>
+    {{/each}}
 </div>

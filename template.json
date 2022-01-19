@@ -8,48 +8,58 @@
     },
     "character": {
       "templates": ["base"],
-      "attributes": {
-        "willpower": {
-          "value": 1,
-          "max": 1
+      "willpower": {
+        "value": 1,
+        "max": 1
+      },
+      "xp": {
+        "unspent": 0,
+        "total": 0
+      },
+      "passions": "",
+      "duties": "",
+      "hitLocs": {
+        "head": {
+          "name": "Head",
+          "no": "10",
+          "shock": 0,
+          "killing": 0,
+          "max": 4
         },
-        "xp": {
-          "unspent": 0,
-          "total": 0
+        "torso": {
+          "name": "Torso",
+          "no": "7-9",
+          "shock": 0,
+          "killing": 0,
+          "max": 10
         },
-        "passions": "",
-        "duties": "",
-        "hitLocs": {
-          "head": {
-            "shock": 0,
-            "killing": 0,
-            "max": 4
-          },
-          "torso": {
-            "shock": 0,
-            "killing": 0,
-            "max": 10
-          },
-          "arm_r": {
-            "shock": 0,
-            "killing": 0,
-            "max": 5
-          },
-          "arm_l": {
-            "shock": 0,
-            "killing": 0,
-            "max": 5
-          },
-          "leg_r": {
-            "shock": 0,
-            "killing": 0,
-            "max": 5
-          },
-          "leg_l": {
-            "shock": 0,
-            "killing": 0,
-            "max": 5
-          }
+        "arm_r": {
+          "name": "Right Arm",
+          "no": "5-6",
+          "shock": 0,
+          "killing": 0,
+          "max": 5
+        },
+        "arm_l": {
+          "name": "Left Arm",
+          "no": "3-4",
+          "shock": 0,
+          "killing": 0,
+          "max": 5
+        },
+        "leg_r": {
+          "name": "Right Leg",
+          "no": "2",
+          "shock": 0,
+          "killing": 0,
+          "max": 5
+        },
+        "leg_l": {
+          "name": "Left Leg",
+          "no": "1",
+          "shock": 0,
+          "killing": 0,
+          "max": 5
         }
       }
     },
