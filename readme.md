@@ -13,4 +13,4 @@ Greg Stolze for the ORE itself.
 
 
 License:
-MIT, for anything I wrote. Check Mr Stolze's website for information on use of the ORE, and the links above to the other credites sources for their respective licenses.
+MIT, for anything I wrote. Check Mr Stolze's website for information on use of the ORE, and the links above to the other credits' sources for their respective licenses.
