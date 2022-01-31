@@ -72,15 +72,15 @@ export class ReignItemSheet extends ItemSheet {
     return context;
   }
 
-/* -------------------------------------------- */
+  /* -------------------------------------------- */
 
-/** @override */
-activateListeners(html) {
-  super.activateListeners(html);
+  /** @override */
+  activateListeners(html) {
+    super.activateListeners(html);
 
-  // Everything below here is only needed if the sheet is editable
-  if (!this.isEditable) return;
+    // Everything below here is only needed if the sheet is editable
+    if (!this.isEditable) return;
 
-  // Roll handlers, click handlers, etc. would go here.
-}
+    // Roll handlers, click handlers, etc. would go here.
+  }
 }

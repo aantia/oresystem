@@ -11,8 +11,8 @@ export class ReignActorSheet extends ActorSheet {
     return mergeObject(super.defaultOptions, {
       classes: ["oresystem", "sheet", "actor"],
       template: "systems/oresystem/templates/actor/actor-sheet.html",
-      width: 600,
-      height: 600,
+      width: 1000,
+      height: 768,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }]
     });
   }
@@ -79,7 +79,7 @@ export class ReignActorSheet extends ActorSheet {
     const skills = [];
     const powers = [];
 
-    // Iterate through items, allocating to containers
+    // Iterate through items, allocating to containers then adding the poolTotal flag
     for (let i of context.items) {
       i.img = i.img || DEFAULT_TOKEN;
       // Append to appropriate arrays.
@@ -90,11 +90,58 @@ export class ReignActorSheet extends ActorSheet {
       } else if (i.type === 'power') {
         powers.push(i);
       }
+
+      const item = i.data;
+      console.log(i)
+      if (!i.flags.oresystem) {
+        i.flags.oresystem = {}
+      }
+      if (i.type == "skill") {
+        console.log("is a skill")
+        console.log(context.items)
+        let linkedStat = context.items.find(x => x.name == item.stat)
+        console.log(linkedStat)
+        if (linkedStat) {
+          console.log("in linkedStat")
+          //i.setFlag("oresystem", "poolTotal", (item.d + linkedStat.data.data.d) + "d/" + (item.ed + linkedStat.data.data.ed) + "e (" + item.ed_set + ")/" + (item.md + linkedStat.data.data.md) + "m");
+          i.flags.oresystem["poolTotal"] = (item.d + linkedStat.data.d) + "d/" + (item.ed + linkedStat.data.ed) + "e (" + item.ed_set + ")/" + (item.md + linkedStat.data.md) + "m";
+        }
+      } else {
+        console.log("is a stat")
+        //i.setFlag("oresystem", "poolTotal", item.d + "d/" + item.ed + "e (" + item.ed_set + ")/" + item.md + "m");
+        i.flags.oresystem["poolTotal"] = (item.d + "d/" + item.ed + "e (" + item.ed_set + ")/" + item.md + "m");
+      }
+
+    }
+
+    // split skills by base stat
+    let sortedSkills = {};
+    let myStatList = [];
+    for (let i of stats) {
+      myStatList.push(i.name)
+    }
+    myStatList.push("Any")
+    for (let i of myStatList) {
+      sortedSkills[i] = []
+    }
+    for (let i of skills) {
+      //this puts them in a messy order, so I'm pre-defining the list above. Leaving this in to catch missing stats.
+      if (!myStatList.includes(i.data.stat) && i.data.stat) {
+        myStatList.push(i.data.stat)
+        sortedSkills[i.data.stat] = [];
+      }
+      if (!i.data.stat) {
+        //push skills with null stats to 'Any'
+        sortedSkills["Any"].push(i);
+      } else {
+        sortedSkills[i.data.stat].push(i);
+      }
     }
 
     // Assign and return
     context.stats = stats;
     context.skills = skills;
+    context.sortedSkills = sortedSkills;
     context.powers = powers;
   }
 
@@ -298,7 +345,7 @@ export class ReignActorSheet extends ActorSheet {
   }
 
   // Note from the original author: There's gotta be a better way to do this but for the life of me I can't figure it out
-  _assignToActorField (fields, value) {
+  _assignToActorField(fields, value) {
     const actorData = duplicate(this.actor)
     // update actor owned items
     if (fields.length === 2 && fields[0] === 'items') {
