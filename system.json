@@ -36,7 +36,7 @@
     }
   ],
   "url": "https://github.com/aantia/oresystem",
-  "manifest": "https://github.com/aantia/oresystem/releases/download/0.2.0/system.json",
-  "download": "https://github.com/aantia/oresystem/releases/download/0.2.0/release-0.2.0.zip",
+  "manifest": "https://github.com/aantia/oresystem/releases/download/0.2.1/system.json",
+  "download": "https://github.com/aantia/oresystem/releases/download/0.2.1/release-0.2.1.zip",
   "license": "LICENSE.txt"
 }
