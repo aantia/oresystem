@@ -7,8 +7,7 @@
   return loadTemplates([
 
     // Actor partials.
-    "systems/oresystem/templates/actor/parts/actor-stats.html",
-    "systems/oresystem/templates/actor/parts/actor-skills.html",
+    "systems/oresystem/templates/actor/parts/actor-attributes.html",
     "systems/oresystem/templates/actor/parts/actor-powers.html",
     "systems/oresystem/templates/actor/parts/actor-health.html",
   ]);

@@ -92,22 +92,16 @@ export class ReignActorSheet extends ActorSheet {
       }
 
       const item = i.data;
-      console.log(i)
       if (!i.flags.oresystem) {
         i.flags.oresystem = {}
       }
       if (i.type == "skill") {
-        console.log("is a skill")
-        console.log(context.items)
         let linkedStat = context.items.find(x => x.name == item.stat)
-        console.log(linkedStat)
         if (linkedStat) {
-          console.log("in linkedStat")
           //i.setFlag("oresystem", "poolTotal", (item.d + linkedStat.data.data.d) + "d/" + (item.ed + linkedStat.data.data.ed) + "e (" + item.ed_set + ")/" + (item.md + linkedStat.data.data.md) + "m");
           i.flags.oresystem["poolTotal"] = (item.d + linkedStat.data.d) + "d/" + (item.ed + linkedStat.data.ed) + "e (" + item.ed_set + ")/" + (item.md + linkedStat.data.md) + "m";
         }
       } else {
-        console.log("is a stat")
         //i.setFlag("oresystem", "poolTotal", item.d + "d/" + item.ed + "e (" + item.ed_set + ")/" + item.md + "m");
         i.flags.oresystem["poolTotal"] = (item.d + "d/" + item.ed + "e (" + item.ed_set + ")/" + item.md + "m");
       }

@@ -72,8 +72,7 @@
   <nav class="sheet-tabs tabs" data-group="primary">
     {{!-- Default tab is specified in actor-sheet.mjs --}}
     <a class="item" data-tab="description">Description</a>
-    <a class="item" data-tab="stats">Stats</a>
-    <a class="item" data-tab="skills">Skills</a>
+    <a class="item" data-tab="attributes">Attributes</a>
     <a class="item" data-tab="powers">Powers</a>
   </nav>
 
@@ -88,14 +87,9 @@
       editable=editable}}
     </div>
 
-    {{!-- Stats Tab --}}
-    <div class="tab stats" data-group="primary" data-tab="stats">
-      {{> "systems/oresystem/templates/actor/parts/actor-stats.html"}}
-    </div>
-
-    {{!-- Skills Tab --}}
-    <div class="tab skills" data-group="primary" data-tab="skills">
-      {{> "systems/oresystem/templates/actor/parts/actor-skills.html"}}
+    {{!-- attributes Tab --}}
+    <div class="tab attributes" data-group="primary" data-tab="attributes">
+      {{> "systems/oresystem/templates/actor/parts/actor-attributes.html"}}
     </div>
 
     {{!-- Powers Tab --}}
