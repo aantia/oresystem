@@ -16,15 +16,21 @@
   "scripts": [],
   "packs": [
     {
-      "name": "stats",
-      "label": "Stats",
-      "path": "/packs/stats.db",
+      "name": "attributes_alexs_game",
+      "label": "Alex's Game",
+      "path": "/packs/attributes_alexs_game.db",
       "entity": "Item"
     },
     {
-      "name": "skills",
-      "label": "Skills",
-      "path": "/packs/skills.db",
+      "name": "attributes_reign",
+      "label": "Reign",
+      "path": "/packs/attributes_reign.db",
+      "entity": "Item"
+    },
+    {
+      "name": "attributes_velvet_book",
+      "label": "The Velvet Book",
+      "path": "/packs/attributes_velvet_book.db",
       "entity": "Item"
     }
   ],
