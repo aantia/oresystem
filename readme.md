@@ -10,7 +10,9 @@ Reign. Note that the sheet is a touch off for Reign; it has Willpower and a tab 
 The Velvet Book, a fan-made game for playing in the world of the Persona video games. I haven't added support for this beyond the attributes compendium.
 My game, which is Reign minus the Eerie, Counterspell, and Sorcery skills. 
 
-TODO: Automation, e.g. 'roll vs difficulty', 'roll with penalty', and 'auto-apply attack damage'.
+TODO: Change hit locations to Items, so that they can be customised fully.
+      Deal with the github issues, which I created myself and then forgot about.
+      Automation, e.g. 'roll vs difficulty', 'roll with penalty', and 'auto-apply attack damage'.
       Make system settings to switch elements on and off (e.g. Powers tab, hit box +- buttons) and rename elements (e.g. Passions).
       Prettify the sheet; this default css is horribly ugly.
       Add support for other ORE systems, e.g. A Dirty World. I'll probably do this in the order Reign -> Wild Talents -> Godlike -> Nemesis -> etc. I'm considering doing this with alternate sheets rather than system settings. I can probably show/hide the sheets with the settings.
