@@ -2,7 +2,7 @@
   "name": "oresystem",
   "title": "ORE system",
   "description": "A system for playing ORE games in FoundryVTT",
-  "version": "0.1.2",
+  "version": "0.2.4",
   "minimumCoreVersion": "9",
   "compatibleCoreVersion": "9",
   "author": "aantia",
