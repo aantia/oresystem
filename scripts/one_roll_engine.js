@@ -40,7 +40,7 @@ Hooks.on('renderChatLog', () => {
       const currentValue = parseInt(looseDieDiv.style.backgroundImage.match(/(\d+)\.png/)[1])
       let newValue = currentValue - 1
       if (newValue === 0) newValue = `loose_${startingValue}`
-      looseDieDiv.style.backgroundImage = `url("systems/oresystem/images/items/skills.svg")`
+      looseDieDiv.style.backgroundImage = `url("systems/oresystem/images/dice/d10_${newValue}.png")`
     } else {
       looseDieDiv.style.outline = looseDieDiv.style.outline === 'dashed' ? 'none' : 'dashed'
     }
@@ -55,23 +55,50 @@ const rollFromChatMessageOreCommand = async (messageText, data) => {
   let match = messageText.match(new RegExp(`^/ore (.*?)(?:\\s*#\\s*([^]+)?)?$`))
   if (!match) return errorParsingOreCommand(messageText)
   const rollPart = match[1], flavorText = match[2]
-  match = rollPart.match(new RegExp(`^([0-9]+)(?:d?1?0?\\s*?)([0-9]+)?(?:\\s*)([eEhH])?(?:\\s*)([1-9]|10)?$`))
+  match = rollPart.match(new RegExp(`^([0-9]+)(?:d?1?0?\\s*?)([0-9]+)?(?:\\s*)([eEhH])?(?:\\s*)(10|[1-9])?(?:\\s*)(dif)?(?:\\s*)(10|[0-9])?(?:\\s*)(pen)?(?:\\s*)(10|[0-9])?(?:\\s*)(md|MD|m|M|wd|WD|w|W)?(?:\\s*)([0-9]+)?$`))
   if (!match) return errorParsingOreCommand(messageText)
   const diceCount = match[1]
   let expertCount = 0
   let expertValue = 10
+  let difficulty = 0
+  let penalty = 0
+  let masterCount = 0
+  // TODO: make this not be order-dependent.
+  // note: when adding stuff, doing label: number works much better than vice versa
+  // if e or E or h or H
   if (match[3]) {
+    // if there is a number, e.g. 3H returns 3
     if (match[2]) {
       expertCount = match[2]
     } else {
       expertCount = 1
     }
+    // if there is a number, e.g. e7 returns 7
     if (match[4]) {
       expertValue = match[4]
     }
   }
+  // if 'dif'
+  if (match[5]) {
+    // e.g. dif 3 returns 3
+    difficulty = match[6]
+  }
+  // if 'pen'
+  if (match[7]) {
+    // e.g. pen 2 returns 2
+    penalty = match[8]
+  }
+  // if md|MD|m|M or any of the wiggle versions
+  if (match[9]) {
+    // if there is a number, e.g. md3 returns 3
+    if (match[10]) {
+      masterCount = parseInt(match[10], 10)
+    } else {
+      masterCount = 1
+    }
+  }
   const roll = createRawRoll(diceCount)
-  const rollResult = parseRawRoll(roll, expertCount, expertValue, flavorText)
+  const rollResult = parseRawRoll(roll, expertCount, expertValue, difficulty, penalty, flavorText, masterCount)
   data.content = await getContentFromRollResult(rollResult)
   data.type = CONST.CHAT_MESSAGE_TYPES.ROLL
   data.roll = roll
@@ -83,7 +110,7 @@ const errorParsingOreCommand = (messageText) => {
   ui.notifications.error(
     `<div>Failed parsing your command:</div>
     <div><p style="font-family: monospace">${messageText}</p></div>
-    <div>Try instead: <p style="font-family: monospace">/ore 7d 6e9 #blah</p></div>`,
+    <div>Try instead: <p style="font-family: monospace">/ore 7d 6e9 dif 3 pen 2 m5 #blah</p></div>`,
   )
   return null
 }
@@ -123,8 +150,24 @@ const createRawRoll = (diceCount) => {
  * @param {string} flavorText - e.g. "Flaming sword attack"
  * @returns {ORERollResult}
  */
-const parseRawRoll = (roll, expertCount, expertValue, flavorText) => {
+const parseRawRoll = (roll, expertCount, expertValue, difficulty, penalty, flavorText, masterCount) => {
   const rawRolls = roll.terms[0].results.map(r => r.result)
+  // apply penalty to expert dice
+  if (expertCount > 0) {
+    expertCount -= penalty
+    if (expertCount < 0) {
+      penalty = expertCount * (-1)
+      expertCount = 0
+    } else {
+      penalty = 0
+    }
+  }
+  // apply remaining penalty to normal dice
+  for (let i = 0; i < penalty; i++) {
+    if (rawRolls.length > 0) {
+      rawRolls.pop()
+    }
+  }
   const expertRolls = new Roll(`${expertCount}d${expertValue}`).roll({ async: false, maximize: true }).terms[0].results.map(r => r.result)
   const counts = new Array(11).fill(0)  // [0, 1, ..., 9, 10].  the 0 is not used
   rawRolls.forEach(k => {
@@ -135,8 +178,10 @@ const parseRawRoll = (roll, expertCount, expertValue, flavorText) => {
   })
   const sets = {}  // key = height, value = width
   const looseDice = []
+  let masterDice = new Array(masterCount).fill(10)
   counts.forEach((count, num) => {
     if (count === 0) return  // (will also skip the "0" count)
+    if (num < difficulty) return // drop dice lower than the difficulty
     if (count === 1) looseDice.push(num)
     if (count >= 2) sets[num] = count
   })
@@ -152,6 +197,7 @@ const parseRawRoll = (roll, expertCount, expertValue, flavorText) => {
         rollsInSet: new Array(s[1]).fill(s[0]),
       })),
     looseDice,
+    masterDice,
   }
 }
 
@@ -159,32 +205,16 @@ const parseRawRoll = (roll, expertCount, expertValue, flavorText) => {
  * @param {ORERollResult} rollResult
  */
 const getContentFromRollResult = async (rollResult) => {
-  const { sets, looseDice, flavorText } = rollResult
+  const { sets, looseDice, flavorText, masterDice } = rollResult
   return await renderTemplate(`systems/oresystem/templates/ore-roll.html`, {
-    sets, looseDice, flavorText,
+    sets, looseDice, flavorText, masterDice,
   })
-}
-
-/**
- * @param {number} d
- * @param {number} ed
- * @param {number} edSet
- * @param {number} md
- * @param {string} comment
- */
-
-const oneRoll = async function(d, ed, edSet, md, comment) {
-  let text = comment;
-  if (md > 0) text += "\n" + md;
-  let mess = await ORE.getContentFromRollResult( ORE.parseRawRoll( ORE.createRawRoll(d), ed, edSet, text))
-  await ChatMessage.create( {content: mess})
 }
 
 export const ORE = {
   createRawRoll,
   parseRawRoll,
   getContentFromRollResult,
-  oneRoll,
   rollFromChatMessageOreCommand,
   hooks: {
     HOOK_CLICK_SET,

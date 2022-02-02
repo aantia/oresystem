@@ -509,6 +509,11 @@
     vertical-align: super;
 }
 
+.one-roll-engine-dice-roll .ore-master-dice {
+    display: inline-flex;
+    vertical-align: super;
+}
+
 .one-roll-engine-dice-roll .ore-single-roll {
     border: 1px solid transparent;
     background-repeat: no-repeat;
@@ -526,6 +531,12 @@
 }
 
 .one-roll-engine-dice-roll .ore-single-roll.loose {
+    flex: 0 0 30px;
+    width: 30px;
+    height: 30px;
+}
+
+.one-roll-engine-dice-roll .ore-single-roll.master {
     flex: 0 0 30px;
     width: 30px;
     height: 30px;
