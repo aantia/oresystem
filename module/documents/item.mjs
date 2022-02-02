@@ -104,9 +104,11 @@ export class ReignItem extends Item {
     // if it's a skill we need to add a stat to it
     if (this.type == "skill") {
       let linkedStat = this.actor.items.getName(this.data.data.stat)
-      str = "/ore " + (item.data.d + linkedStat.data.data.d) + "d " + (item.data.ed + linkedStat.data.data.ed) + "e" + item.data.ed_set + " # " + item.name + "\n MD: " + (item.data.md + linkedStat.data.data.md);
+      let difficulty = this.actor.data.data.difficulty
+      let penalty = this.actor.data.data.penalty
+      str = "/ore " + (item.data.d + linkedStat.data.data.d) + "d " + (item.data.ed + linkedStat.data.data.ed) + "e" + item.data.ed_set + " dif " + difficulty + " pen " + penalty + " md " + (item.data.md + linkedStat.data.data.md) + " # " + item.name;
     } else {
-      str = "/ore " + item.data.d + "d " + item.data.ed + "e" + item.data.ed_set + " # " + item.name + "\n MD: " + item.data.md;
+      str = "/ore " + item.data.d + "d " + item.data.ed + "e" + item.data.ed_set + " dif " + difficulty + " pen " + penalty + " md " + item.data.md + " # " + item.name;
     }
 
 

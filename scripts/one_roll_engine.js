@@ -152,7 +152,17 @@ const createRawRoll = (diceCount) => {
  */
 const parseRawRoll = (roll, expertCount, expertValue, difficulty, penalty, flavorText, masterCount) => {
   const rawRolls = roll.terms[0].results.map(r => r.result)
-  // apply penalty to expert dice
+  // apply penalty to master dice
+  if (masterCount > 0) {
+    masterCount -= penalty
+    if (masterCount < 0) {
+      penalty = masterCount * (-1)
+      masterCount = 0
+    } else {
+      penalty = 0
+    }
+  }
+  // then apply remaining penalty to expert dice
   if (expertCount > 0) {
     expertCount -= penalty
     if (expertCount < 0) {

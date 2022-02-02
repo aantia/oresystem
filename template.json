@@ -3,7 +3,9 @@
     "types": ["character", "npc"],
     "templates": {
       "base": {
-        "biography": ""
+        "biography": "",
+        "difficulty": 0,
+        "penalty": 0
       }
     },
     "character": {

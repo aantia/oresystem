@@ -2,8 +2,13 @@
 
   {{!-- Sheet Header --}}
   <header class="sheet-header">
-    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="300" width="300" />
-
+    <div>
+      <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="300" width="300" />
+      <label for="data.difficulty" class="resource-label">Difficulty</label>
+      <input type="text" name="data.difficulty" value="{{data.difficulty}}" data-dtype="Number" />
+      <label for="data.penalty" class="resource-label">Penalty</label>
+      <input type="text" name="data.penalty" value="{{data.penalty}}" data-dtype="Number" />
+    </div>
 
     <div>
       {{> "systems/oresystem/templates/actor/parts/actor-health.html"}}
@@ -22,24 +27,20 @@
         <div class="resource flex-group-center">
           <label for="data.willpower.value" class="resource-label">Willpower</label>
           <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="data.willpower.value" value="{{data.willpower.value}}"
-              data-dtype="Number" />
+            <input type="text" name="data.willpower.value" value="{{data.willpower.value}}" data-dtype="Number" />
             <span> / </span>
-            <input type="text" name="data.willpower.max" value="{{data.willpower.max}}"
-              data-dtype="Number" />
+            <input type="text" name="data.willpower.max" value="{{data.willpower.max}}" data-dtype="Number" />
           </div>
         </div>
 
-           
+
 
         <div class="resource flex-group-center">
           <label for="data.xp.unspent" class="resource-label">Experience</label>
           <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="data.xp.unspent" value="{{data.xp.unspent}}"
-              data-dtype="Number" />
+            <input type="text" name="data.xp.unspent" value="{{data.xp.unspent}}" data-dtype="Number" />
             <span> / </span>
-            <input type="text" name="data.xp.total" value="{{data.xp.total}}"
-              data-dtype="Number" />
+            <input type="text" name="data.xp.total" value="{{data.xp.total}}" data-dtype="Number" />
           </div>
         </div>
 
