@@ -249,11 +249,12 @@
 }
 
 .oresystem .sheet-header .profile-img {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 100px;
-  flex: 0 0 100px;
-  height: 100px;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 200px;
+  flex: 1 1 200px;
+  height: 200px;
   margin-right: 10px;
+  align-self: top;
 }
 
 .oresystem .sheet-header .header-fields {

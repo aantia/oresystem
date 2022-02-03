@@ -101,11 +101,11 @@ export class ReignItem extends Item {
 
     // Construct the roll
     let str;
-    // if it's a skill we need to add a stat to it
+    let difficulty = this.actor.data.data.difficulty
+    let penalty = this.actor.data.data.penalty
     if (this.type == "skill") {
+      // if it's a skill we need to add a stat to it
       let linkedStat = this.actor.items.getName(this.data.data.stat)
-      let difficulty = this.actor.data.data.difficulty
-      let penalty = this.actor.data.data.penalty
       str = "/ore " + (item.data.d + linkedStat.data.data.d) + "d " + (item.data.ed + linkedStat.data.data.ed) + "e" + item.data.ed_set + " dif " + difficulty + " pen " + penalty + " md " + (item.data.md + linkedStat.data.data.md) + " # " + item.name;
     } else {
       str = "/ore " + item.data.d + "d " + item.data.ed + "e" + item.data.ed_set + " dif " + difficulty + " pen " + penalty + " md " + item.data.md + " # " + item.name;
