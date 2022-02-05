@@ -46,6 +46,7 @@ export class ReignItemSheet extends ItemSheet {
       const stats = [];
       const skills = [];
       const powers = [];
+      const hitlocs = [];
 
       // Iterate through items, allocating to containers
       for (let i of actor.items) {
@@ -56,6 +57,8 @@ export class ReignItemSheet extends ItemSheet {
           skills.push(i);
         } else if (i.type === 'power') {
           powers.push(i);
+        } else if (i.type === 'hitloc') {
+          hitlocs.push(i);
         }
       }
 
@@ -63,6 +66,7 @@ export class ReignItemSheet extends ItemSheet {
       context.stats = stats;
       context.skills = skills;
       context.powers = powers;
+      context.hitlocs = hitlocs;
     }
 
     // Add the actor's data to context.data for easier access, as well as flags.

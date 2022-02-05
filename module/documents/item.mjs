@@ -16,9 +16,6 @@ export class ReignItem extends Item {
   async _preCreate(data, options, userId) {
     await super._preCreate(data, options, userId);
 
-    console.log('in pre-create');
-
-    // TODO: make this just affect skills - I think I just need to do if(data.type == 'skill')
     // assign a default image
     if (!data.img && data.type === 'skill') {
       const img = "systems/oresystem/images/items/skills.svg";

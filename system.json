@@ -2,7 +2,7 @@
   "name": "oresystem",
   "title": "ORE system",
   "description": "A system for playing ORE games in FoundryVTT",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "minimumCoreVersion": "9",
   "compatibleCoreVersion": "9",
   "author": "aantia",
@@ -32,6 +32,12 @@
       "label": "The Velvet Book",
       "path": "/packs/attributes_velvet_book.db",
       "entity": "Item"
+    },
+    {
+      "name": "hit-locations",
+      "label": "Hit Locations",
+      "path": "/packs/hit-locations.db",
+      "entity": "Item"
     }
   ],
   "languages": [
@@ -43,6 +49,6 @@
   ],
   "url": "https://github.com/aantia/oresystem",
   "manifest": "https://github.com/aantia/oresystem/releases/download/manifest/system.json",
-  "download": "https://github.com/aantia/oresystem/releases/download/0.3.0/release-0.3.0.zip",
+  "download": "https://github.com/aantia/oresystem/releases/download/0.4.0/release-0.4.0.zip",
   "license": "LICENSE.txt"
 }

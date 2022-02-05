@@ -76,6 +76,10 @@ Handlebars.registerHelper('numLoop', function (num, options) {
   return ret
 })
 
+Handlebars.registerHelper('lessThan', function(num1, num2) {
+  return Math.max(0, num2-num1);
+});
+
 /* -------------------------------------------- */
 /*  Ready Hook                                  */
 /* -------------------------------------------- */
