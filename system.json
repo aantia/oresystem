@@ -4,7 +4,7 @@
   "description": "A system for playing ORE games in FoundryVTT",
   "version": "0.4.0",
   "minimumCoreVersion": "9",
-  "compatibleCoreVersion": "9",
+  "compatibleCoreVersion": "11",
   "author": "aantia",
   "esmodules": [
     "module/oresystem.mjs",
@@ -19,25 +19,25 @@
       "name": "attributes_alexs_game",
       "label": "Alex's Game",
       "path": "/packs/attributes_alexs_game.db",
-      "entity": "Item"
+      "type": "Item"
     },
     {
       "name": "attributes_reign",
       "label": "Reign",
       "path": "/packs/attributes_reign.db",
-      "entity": "Item"
+      "type": "Item"
     },
     {
       "name": "attributes_velvet_book",
       "label": "The Velvet Book",
       "path": "/packs/attributes_velvet_book.db",
-      "entity": "Item"
+      "type": "Item"
     },
     {
       "name": "hit-locations",
       "label": "Hit Locations",
       "path": "/packs/hit-locations.db",
-      "entity": "Item"
+      "type": "Item"
     }
   ],
   "languages": [
